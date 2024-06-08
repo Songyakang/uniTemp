@@ -1,6 +1,5 @@
 <template>
-	<Header title='首页'></Header>
-	<Tabbar url='/pages/index/index'></Tabbar>
+	<Header title='个人中心'></Header>
 </template>
 
 <script setup>

@@ -1,74 +1,99 @@
 <template>
-	<view class="footer-area flex-row-around-nowrap">
-		<view class="item" @click="navigateTo('/pages/index/index')">
-			<view class="icon" :class="{gray: url != '/pages/index/index'}">
-				<image class="image" src="./image/index_select.png"></image>
-			</view>
-			<view class="text bind">主页</view>
-		</view>
-		<view class="item circle flex-column-start-center" @click="navigateTo('/pages/clockIn/clockIn')">
-			<view class="icon"><image class="image" src="./image/qrcode.png"></image></view>
-			<view class="text bind">入场码</view>
-		</view>
-		<view class="item" @click="navigateTo('/pages/user/index')">
-			<view class="icon" :class="{gray: url != '/pages/user/index'}"><image class="image" src="./image/user_select.png"></image></view>
-			<view class="text">我的</view>
+	<view class="footer flex-row-around-nowrap">
+		<!-- 无集市  -->
+		<view
+			v-for="item in menuList"
+			:key='item.url'
+			class="menu flex-column-center-center"
+			:class="{bind: props.url == item.url}"
+			@click="toUrl(item.url)">
+			<image class="icon" :src="props.url == item.url ? item.selectIcon : item.icon"></image>
+			<view class="name">{{item.name}}</view>
 		</view>
 	</view>
 </template>
 
 <script setup>
-const props = defineProps({
-	url: {
-		type: String,
-		default: () => "/pages/index/index"
+	import {onMounted,ref} from 'vue'
+	import {staticIcon} from '../../utils/util.js'
+	
+	
+	onMounted(async ()=>{
+	})
+	
+	//不含集市
+	const menuList = ref([
+		{
+			url: '/pages/index/index',
+			icon: '',
+			selectIcon: '',
+			name: '首页'
+		},{
+			url: '/pages/user/index',
+			icon: '',
+			selectIcon: '',
+			name: '我的'
+		}
+	])
+	
+	
+	const props = defineProps({
+		url: {
+			type: String,
+			default: '/pages/index/index'
+		}
+	})
+	
+	const toUrl = (url) => {
+		if(url != props.url){
+			uni.redirectTo({
+				url
+			})
+		}
 	}
-})
+	
 </script>
 
 <style lang="less" scoped>
-.footer-area{
+.footer{
+	padding: 6rpx 0 12rpx 0;
 	position: fixed;
 	bottom: 0;
+	height: --tabbarheight;
+	box-sizing: border-box;
 	left: 0;
 	right: 0;
-	z-index: 9;
-	padding-bottom: calc(env(safe-area-inset-bottom) / 2);
-	height: 132rpx;
-	box-shadow: 0rpx 34rpx 57rpx 0rpx rgba(0,0,0,0.25);
-	background: #fff;
-	.item{
+	background-color: #fff;
+	padding-bottom: calc(12rpx + env(safe-area-inset-bottom));
+	box-shadow: 0px 0px 11rpx 2rpx rgba(0,0,0,0.08);
+	z-index: 999;
+	.menu{
+		width: 100rpx;
+		color: #999;
 		.icon{
-			margin-bottom: 9.3rpx;
-			width: 46.67rpx;
-			height: 47.07rpx;
+			width: 40rpx;
+			height: 40rpx;
+			margin-bottom: 10rpx;
+			margin-top: 10rpx;
 		}
-		.gray{
-			filter: grayscale(1);
-		}
-		.text{
-			font-weight: 600;
-			font-size: 20rpx;
-			color: #DADADA;
+		.name{
+			font-size: 24rpx;
 		}
 		
-		.bind{
-			color: #141414;
+	}
+	.crice{
+		border-radius: 50%;
+		background-color: #fff;
+		transform: translateY(0rpx);
+		// padding: 20rpx;
+		.center{
+			width: 128rpx;
+			height: 128rpx;
 		}
 	}
-	.circle{
-		margin-top: -74rpx;
-		.icon{
-			padding: 14.67rpx 14.67rpx 0 14.67rpx;
-			width: 118.67rpx;
-			height: 118.67rpx;
-			background-color: #fff;
-			border-radius: 50%;
-			.image{
-				width: 118.67rpx;
-				height: 118.67rpx;
-			}
-		}
+	.bind{
+		font-size: 24rpx;
+		color: #FFB22A;
 	}
 }
 </style>

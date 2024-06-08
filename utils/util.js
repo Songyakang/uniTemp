@@ -1,4 +1,4 @@
-import { version , isReslease} from "./config.js"
+import { version , isReslease, imageUrl} from "./config.js"
 
 /**
  * @description 更新本地缓存值
@@ -123,4 +123,23 @@ export const navigateTo = (url) => {
 	uni.navigateTo({
 		url
 	})
+}
+
+
+export const staticIcon = (url) => {
+	if(isReslease){
+		return `${imageUrl}/static${url}?version=${version()}`
+	}else{
+		return `${imageUrl}/static${url}?version=${version()}`
+	}
+	
+}
+
+export const setImageUrl = (url) => {
+	if(url){
+		return url?.match(/^http(s)/g) ? url : (imageUrl || `https://static.okwan.com/`) + url
+	}else{
+		return ''
+	}
+	
 }

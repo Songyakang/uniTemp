@@ -8,6 +8,19 @@
 			}
 		}
 	],
+	"subPackages": [
+		{
+			"root": "pages/user",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

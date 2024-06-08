@@ -8,6 +8,7 @@ export const version = () => {
 }
 
 export const httpUrl = ''
+export const imageUrl = ''
 
 // #ifdef MP-WEIXIN
 export const isReslease = __wxConfig?.envVersion == "release"

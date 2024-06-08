@@ -156,9 +156,11 @@
 
 :root{
 	--height: 30px;
+	--tabbarheight: calc(102rpx + env(safe-area-inset-bottom));
 }
 /* #ifdef MP-WEIXIN */
 page{
 	--height: 30px;
+	--tabbarheight: calc(102rpx + env(safe-area-inset-bottom));
 }
 /* #endif */
