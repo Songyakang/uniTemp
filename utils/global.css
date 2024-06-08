@@ -1,0 +1,164 @@
+.flex-center-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-center-center-wrap{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+.flex-center-bottom{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-flow: row nowrap;
+}
+.flex-start-center-nowrap{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: row nowrap;
+}
+.flex-row-between-nowrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: row nowrap;
+}
+.flex-row-start-between-nowrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: row nowrap;
+}
+.flex-row-start-end-nowrap{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	flex-flow: row nowrap;
+}
+.flex-row-between-wrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: row wrap;
+}
+.flex-row-start-between-wrap{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: row wrap;
+}
+.flex-row-start-center-wrap{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: row wrap;
+}
+.flex-row-around-nowrap{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row nowrap;
+}
+.flex-row-between-baseline{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+.flex-row-between-end{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.flex-row-start-basline{
+	display: flex;
+	justify-content: flex-start;
+	align-items: baseline;
+}
+.flex-row-end{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-flow: row nowrap;
+}
+.flex-start-start{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-flow: row nowrap;
+}
+.flex-row-between-start{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: row wrap;
+}
+.flex-column-center-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+}
+.flex-column-start-center{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: column nowrap;
+}
+.flex-column-end-start{
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	flex-flow: column nowrap;
+}
+.flex-column-between-start{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: column nowrap;
+}
+.flex-1{
+	flex: 1;
+}
+.line-clamp-2{
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.image{
+  width: inherit;
+  height: inherit;
+  /* background-color: #f3f3fa; */
+}
+
+.relative{
+	position: relative;
+	z-index: 1;
+}
+
+
+.flex-column-center-start{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+
+:root{
+	--height: 30px;
+}
+/* #ifdef MP-WEIXIN */
+page{
+	--height: 30px;
+}
+/* #endif */
