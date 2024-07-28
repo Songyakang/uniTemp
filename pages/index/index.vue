@@ -1,5 +1,6 @@
 <template>
 	<Header title='首页'></Header>
+	<view class="m-10 w-600 h-100 b-cf1166 flex-row-center-center-nowrap">dasijdisa</view>
 	<Tabbar url='/pages/index/index'></Tabbar>
 </template>
 
